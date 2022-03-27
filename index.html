@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/e3edec4509.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://foSnts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100&family=Work+Sans:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container shadow frame">
+      <form class="search-form" id="search-form">
+        <div class="row">
+          <div class="col-5">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Enter City Name"
+              autofocus="on"
+              class="form-control shadow border-0"
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-2">
+            <input
+              type="submit"
+              value="Search"
+              class="form-control btn btn-primary shadow-sm"
+            />
+          </div>
+          <div class="col-2">
+            <button class="btn btn-success" id="location-button">
+              Current
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <h1>Austin</h1>
+      <h2>Date/Time</h2>
+      <h3>Cloudy</h3>
+      <div class="factors">
+        Humidity (%): <span class="factors-value" id="humidity-value">38</span>
+        <br />
+        Wind (km/h): <span class="factors-value" id="wind-value">14</span>
+      </div>
+
+      <div class="temp-section">
+        <span class="temperature" id="temp-default">59</span
+        ><span class="units">
+          <a href="#" id="fahrenheit-link">°F</a>
+          <!-- |<a href="#" id="celsius-link">°C</a>-->
+        </span>
+      </div>
+
+      <i class="fa-solid fa-cloud cloud"></i>
+      <div class="row forecast">
+        <div class="col">
+          <strong>Wednesday</strong>
+          <div class="emoji">☀</div>
+          90°F/75°F
+        </div>
+        <div class="col">
+          <strong>Thursday</strong>
+          <div class="emoji">☀</div>
+          88°F/74°F
+        </div>
+        <div class="col">
+          <strong>Friday</strong>
+          <div class="emoji">🌧</div>
+          54°F/39°F
+        </div>
+        <div class="col">
+          <strong>Saturday</strong>
+          <div class="emoji">☀</div>
+          76°F/50°F
+        </div>
+        <div class="col">
+          <strong>Sunday</strong>
+          <div class="emoji">☀</div>
+          88°F/74°F
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
