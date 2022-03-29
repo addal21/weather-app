@@ -1,3 +1,7 @@
+body {
+  background: #e3e3e3;
+}
+
 .frame {
   max-width: 700px;
   max-height: 750px;
@@ -5,6 +9,7 @@
   border-radius: 10px;
   padding: 15px;
   margin: 20px auto;
+  background: white;
 }
 
 h1,
@@ -17,7 +22,7 @@ h3,
 
 h2,
 h3 {
-  color: navy;
+  color: #005792;
 }
 
 h1 {
@@ -79,12 +84,12 @@ a {
   position: relative;
   left: 20px;
   top: 20px;
-  color: black;
-  font-weight: 500;
+  color: #005792;
+  font-weight: 550;
 }
 
 .factors-value {
-  color: #000;
+  color: #005792;
   font-family: arial;
   font-weight: 550;
 }
