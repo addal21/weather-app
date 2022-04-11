@@ -1,5 +1,5 @@
 body {
-  background: #e3e3e3;
+  background: #f9f7fe;
 }
 
 .frame {
@@ -15,7 +15,7 @@ body {
 h1,
 h2,
 h3,
-.factors,
+.weather-factors,
 .factors-value {
   font-family: "Work Sans", sans-serif;
 }
@@ -52,18 +52,18 @@ h3 {
 }
 
 .cloud {
-  display: block;
   position: relative;
   top: -100px;
+  left: 50px;
   font-size: 100px;
-  text-align: center;
+  text-align: left;
   color: #bdc3c7;
 }
 
 .temp-section {
-  text-align: center;
+  text-align: left;
   position: relative;
-  left: 150px;
+  left: 200px;
   top: -70px;
   font-family: arial;
   font-weight: 600;
@@ -79,19 +79,37 @@ a {
   position: relative;
   top: -23px;
 }
-.factors {
-  text-align: left;
+.weather-factors {
+  text-align: center;
   position: relative;
-  left: 20px;
-  top: 20px;
-  color: #005792;
+  right: -100px;
+  top: 40px;
+  color: #aaa9ad;
   font-weight: 550;
 }
 
-.factors-value {
-  color: #005792;
-  font-family: arial;
-  font-weight: 550;
+.humidity-symbol,
+.wind-symbol {
+  color: black;
+  font-size: 30px;
+}
+.humidity-symbol {
+  position: relative;
+  left: -25px;
+}
+
+.humidity-section {
+  padding: 0 0 10px 0;
+}
+
+.wind-symbol {
+  position: relative;
+  left: -10px;
+}
+
+#wind-value {
+  position: relative;
+  left: 1px;
 }
 
 .forecast {
@@ -116,4 +134,11 @@ a {
   text-align: center;
   position: relative;
   left: -220px;
+}
+
+#location-button {
+  font-size: 30px;
+  color: #d5334d;
+  position: relative;
+  bottom: -6px;
 }

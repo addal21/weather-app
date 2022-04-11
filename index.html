@@ -47,9 +47,7 @@
             />
           </div>
           <div class="col-2">
-            <button class="btn btn-success" id="location-button">
-              Current
-            </button>
+            <i class="fa-solid fa-location-dot" id="location-button"></i>
           </div>
         </div>
       </form>
@@ -57,10 +55,15 @@
       <h1>Austin</h1>
       <h2>Date/Time</h2>
       <h3>Cloudy</h3>
-      <div class="factors">
-        Humidity (%): <span class="factors-value" id="humidity-value">38</span>
-        <br />
-        Wind (km/h): <span class="factors-value" id="wind-value">14</span>
+      <div class="weather-factors">
+        <div class="humidity-section">
+          <i class="fa-solid fa-droplet humidity-symbol"></i>
+          <span class="factors-value" id="humidity-value">38</span>%
+        </div>
+        <div class="wind-section">
+          <i class="fa-solid fa-wind wind-symbol"></i
+          ><span class="factors-value" id="wind-value">14</span> km/h
+        </div>
       </div>
 
       <div class="temp-section">
