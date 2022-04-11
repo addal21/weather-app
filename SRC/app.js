@@ -63,15 +63,15 @@ searchForm.addEventListener("submit", handleSubmit);
 
 function displayWeather(response) {
   let cityField = document.querySelector("h1");
-  console.log(response);
+
   cityField.innerHTML = response.data.name;
   // ^^ allows us to display the name and formatting that the API gives us after user types a city
   let roundedTemp = Math.round(response.data.main.temp);
   //^^displays the real-time temp of city searched in the temp field
   let tempDescription = document.querySelector("h3");
-  tempDescription.innerHTML = response.data.weather[0].main;
+  tempDescription.innerHTML = response.data.weather[0].description;
   let tempSection = document.querySelector("#temp-default");
-  console.log(tempSection);
+
   tempSection.innerHTML = roundedTemp;
   let windValue = document.querySelector("#wind-value");
   let humidityValue = document.querySelector("#humidity-value");
@@ -86,9 +86,7 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(searchGeoLocation);
 }
 
-function displayGeoTemp(position) {
-  console.log(position);
-}
+function displayGeoTemp(position) {}
 
 function searchGeoLocation(position) {
   let latitude = position.coords.latitude;
