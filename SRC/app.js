@@ -29,23 +29,31 @@ let currentTime = new Date();
 let dateField = document.querySelector("h2");
 dateField.innerHTML = formatDate(currentTime);
 
-//function convertToFahrenheit(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#temp-default");
-//  temperatureElement.innerHTML = 59;
-//}
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-default");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+}
 
-// function convertToCelsius(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#temp-default");
-//  temperatureElement.innerHTML = 15;
-// }
+function convertToCelsius(event) {
+  event.preventDefault();
+  let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
+  let temperatureElement = document.querySelector("#temp-default");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
 
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-//fahrenheitLink.addEventListener("click", convertToFahrenheit);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-//let celsiusLink = document.querySelector("#celsius-link");
-//celsiusLink.addEventListener("click", convertToCelsius);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+let fahrenheitTemp = null;
+
 function search(city) {
   let apiKey = "5cdb8986f5f1ed79b448c4395c5f4e40";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
@@ -73,6 +81,8 @@ function displayWeather(response) {
   let tempSection = document.querySelector("#temp-default");
   let iconElement = document.querySelector(".weather-icon");
 
+  fahrenheitTemp = response.data.main.temp;
+
   tempSection.innerHTML = roundedTemp;
   let windValue = document.querySelector("#wind-value");
   let humidityValue = document.querySelector("#humidity-value");
@@ -85,14 +95,10 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-search("Austin");
-
 function getLocation(event) {
   event.preventDefault;
   navigator.geolocation.getCurrentPosition(searchGeoLocation);
 }
-
-function displayGeoTemp(position) {}
 
 function searchGeoLocation(position) {
   let latitude = position.coords.latitude;
@@ -104,3 +110,5 @@ function searchGeoLocation(position) {
 }
 let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getLocation);
+
+search("Austin");

@@ -9,7 +9,7 @@ body {
   border-radius: 5px;
   padding: 15px;
   margin: 20px auto;
-  background: white;
+  background: #fbfbfb;
 }
 
 h1,
@@ -56,11 +56,17 @@ h3 {
   position: relative;
   top: -150px;
   left: 50px;
-  font-size: 100px;
   text-align: left;
-  color: #bdc3c7;
 }
 
+.temp-section .active {
+  cursor: default;
+  color: black;
+}
+
+.temp-section .active:hover {
+  text-decoration: none;
+}
 .temp-section {
   text-align: left;
   position: relative;
@@ -78,7 +84,7 @@ a {
 .units {
   font-size: 16px;
   position: relative;
-  top: -23px;
+  top: -40px;
 }
 .weather-factors {
   text-align: center;
