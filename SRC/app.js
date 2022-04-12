@@ -71,12 +71,18 @@ function displayWeather(response) {
   let tempDescription = document.querySelector("h3");
   tempDescription.innerHTML = response.data.weather[0].description;
   let tempSection = document.querySelector("#temp-default");
+  let iconElement = document.querySelector(".weather-icon");
 
   tempSection.innerHTML = roundedTemp;
   let windValue = document.querySelector("#wind-value");
   let humidityValue = document.querySelector("#humidity-value");
   windValue.innerHTML = Math.round(response.data.wind.speed);
   humidityValue.innerHTML = response.data.main.humidity;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 search("Austin");
