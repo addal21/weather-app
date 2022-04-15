@@ -1,5 +1,5 @@
 body {
-  background: #f9f7fe;
+  background: #e6e6e6;
 }
 
 .frame {
@@ -9,14 +9,15 @@ body {
   border-radius: 5px;
   padding: 15px;
   margin: 20px auto;
-  background: #fbfbfb;
+  background: #fdfeff;
 }
 
 h1,
 h2,
 h3,
 .weather-factors,
-.factors-value {
+.factors-value,
+.forecast-section {
   font-family: "Work Sans", sans-serif;
 }
 
@@ -36,6 +37,7 @@ h2 {
   text-align: left;
   margin-left: 20px;
   font-size: 30px;
+  font-weight: 900;
 }
 
 h3 {
@@ -43,8 +45,44 @@ h3 {
   font-size: 20px;
   margin-left: 20px;
   text-transform: capitalize;
+  color: black;
+  font-weight: 700;
+  opacity: 0.5;
 }
 
+.days-name,
+.low {
+  color: black;
+  opacity: 0.5;
+}
+
+.high {
+  color: black;
+  opacity: 1;
+}
+.day1 {
+  position: relative;
+  left: -30px;
+}
+
+.day2 {
+  position: relative;
+}
+
+.day3 {
+  position: relative;
+  left: 10px;
+}
+
+.day4 {
+  position: relative;
+  left: 20px;
+}
+
+.day5 {
+  position: relative;
+  right: -30px;
+}
 .search-form {
   margin-top: 20px;
   margin-left: 20px;
@@ -119,28 +157,31 @@ a {
   left: 1px;
 }
 
-.forecast {
+.forecast-section {
   font-family: "Roboto Serif", sans-serif;
   font-size: 15px;
   position: relative;
-  top: -50px;
-  left: 10px;
+  top: -75px;
+  right: -70px;
 }
 
-.emoji {
+.forecast-emoji {
   position: relative;
-  font-size: 20px;
+  font-size: 50px;
   left: 5px;
 }
 
-.col {
-  text-align: center;
+.forecast-temperatures {
+  margin-top: -10px;
+  color: #000000;
+  font-size: 18px;
 }
 
 .gh-link {
   text-align: center;
   position: relative;
-  left: -220px;
+  top: -65px;
+  left: 230px;
 }
 
 #location-button {
