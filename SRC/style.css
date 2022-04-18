@@ -3,7 +3,7 @@ body {
 }
 
 .frame {
-  max-width: 700px;
+  max-width: 800px;
   max-height: 550px;
   border: 1px solid #dadde1;
   border-radius: 5px;
@@ -36,8 +36,8 @@ h1 {
 h2 {
   text-align: left;
   margin-left: 20px;
-  font-size: 30px;
-  font-weight: 900;
+  font-size: 34px;
+  font-weight: 800;
 }
 
 h3 {
@@ -50,39 +50,16 @@ h3 {
   opacity: 0.5;
 }
 
-.days-name,
 .low {
   color: black;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .high {
   color: black;
   opacity: 1;
 }
-.day1 {
-  position: relative;
-  left: -30px;
-}
 
-.day2 {
-  position: relative;
-}
-
-.day3 {
-  position: relative;
-  left: 10px;
-}
-
-.day4 {
-  position: relative;
-  left: 20px;
-}
-
-.day5 {
-  position: relative;
-  right: -30px;
-}
 .search-form {
   margin-top: 20px;
   margin-left: 20px;
@@ -159,29 +136,27 @@ a {
 
 .forecast-section {
   font-family: "Roboto Serif", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   position: relative;
   top: -75px;
-  right: -70px;
 }
 
-.forecast-emoji {
+strong {
   position: relative;
-  font-size: 50px;
-  left: 5px;
+  left: 20px;
+  color: #b7b6b9;
 }
 
-.forecast-temperatures {
-  margin-top: -10px;
-  color: #000000;
-  font-size: 18px;
+#forecast-emoji {
+  position: relative;
+  font-size: 35px;
+  left: 17px;
 }
 
 .gh-link {
   text-align: center;
   position: relative;
-  top: -65px;
-  left: 230px;
+  left: 280px;
 }
 
 #location-button {
