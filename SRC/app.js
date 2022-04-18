@@ -25,10 +25,6 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-let currentTime = new Date();
-let dateField = document.querySelector("h2");
-dateField.innerHTML = formatDate(currentTime);
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -52,14 +48,6 @@ function convertToCelsius(event) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
 }
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
-let fahrenheitTemp = null;
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -107,9 +95,6 @@ function handleSubmit(event) {
   let city = document.querySelector("#search-input").value;
   search(city);
 }
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
 
 function getForecast(coordinates) {
   let apiKey = "5cdb8986f5f1ed79b448c4395c5f4e40";
@@ -160,5 +145,20 @@ function searchGeoLocation(position) {
 }
 let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getLocation);
+
+let currentTime = new Date();
+let dateField = document.querySelector("h2");
+dateField.innerHTML = formatDate(currentTime);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
+
+let fahrenheitTemp = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
 
 search("Austin");
