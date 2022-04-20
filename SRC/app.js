@@ -32,23 +32,6 @@ function formatDay(timestamp) {
   return daysOfWeek[day];
 }
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temp-default");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let celsiusTemp = ((fahrenheitTemp - 32) * 5) / 9;
-  let temperatureElement = document.querySelector("#temp-default");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector(".forecast-section");
@@ -149,12 +132,6 @@ currentLocation.addEventListener("click", getLocation);
 let currentTime = new Date();
 let dateField = document.querySelector("h2");
 dateField.innerHTML = formatDate(currentTime);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 let fahrenheitTemp = null;
 
